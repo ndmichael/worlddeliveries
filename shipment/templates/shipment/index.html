@@ -1,0 +1,438 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'shipment/images/bg1.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+            <div class="carousel-caption col-12 col-md-5 mx-auto">
+                <h5>Transport Your Goods</h5>
+                <h1>
+                    FAST AND SAFELY AROUND THE WORLD.
+                </h1>
+                <p>
+                    We ship whatever, wherever you want. Logistics and courier service dedicated for life time awesome experience.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-item active">
+            <img src="{% static 'shipment/images/bg1.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+            <div class="carousel-caption col-12 col-md-5 mx-auto">
+                <h5>Transport Your Goods</h5>
+                <h1>
+                    FAST AND SAFELY AROUND THE WORLD.
+                </h1>
+                <p>
+                    We ship whatever, wherever you want. Logistics and courier service dedicated for life time awesome experience.
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'shipment/images/bg2.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+            <div class="carousel-caption col-12 col-md-6 mx-auto">
+                <h5>Welcome to</h5>
+                <h1 class="animate__animated animate__bounceInLeft animate__delay-1s">
+                    WORLDWIDE DELIVERY AND COURIER SERVICES.
+                </h1>
+                <p class="animate__animated animate__bounceInRight animate__delay-1s">
+                    We proffer solutions to your every logistics problems, by providing couriers services via air, sea, and land.
+                </p>
+                <div class="pt-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <span>
+                        <a href="#" class="btn btn-primary">
+                            ABOUT US
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" class="btn btn-dark">
+                            TRACK SHIPMENT
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'shipment/images/bg1.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+            <div class="carousel-caption col-12 col-md-6 mx-auto">
+                <h5>Transport Your Goods</h5>
+                <h1 class="animate__animated animate__bounceInLeft animate__delay-1s">
+                    FAST AND SAFELY AROUND THE WORLD.
+                </h1>
+                <p class="animate__animated animate__bounceInRight animate__delay-1s">
+                    We ship whatever, wherever you want. Logistics and courier service dedicated for life time awesome experience.
+                </p>
+                <div class="pt-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <span>
+                        <a href="#" class="btn btn-primary">
+                            TRACK SHIPMENT
+                        </a>
+                    </span>
+                    <span>
+                        <a href="#" class="btn btn-dark">
+                            GET A QUOTE
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <div class="container">
+        <section class="row">
+            <article class="col-12 col-md-4">
+                <div class=" text-end">
+                    <h5>OUR CORE VALUES</h5>
+                    <h2>
+                        WORLD WIDE EXPRESS COURIER SERVICE.
+                    </h2>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <div class=" d-flex">
+                    <i class="icofont icofont-quote-left icofont-4x text-muted"></i>
+                    <p class="ps-3">
+                        <b>TRUST:</b> We invest much efforts in building trust amongst our clients by offering only the best services.
+                        <br /> <b>RESTPECT:</b> We respect our clients and make sure they are giving the best services and treatment.
+                    </p>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <img src="{% static 'shipment/images/forklift.png' %}" class="img-fluid w-100 h-100" alt="" style="transform: translateY(-200px)  scale(0.7); z-index: 100;">
+            </article>
+
+        </section>
+        <section class="row" style="margin-top: -100px;">
+            <article class="col-12 col-md-4">
+                <img src="{% static 'shipment/images/worldwide.jpg'%}" alt="" class="img-fluid shadow-sm" data-aos="zoom-in">
+                <div class="py-4 px-3">
+                    <small><b>Worldwide</b></small>
+                    <h3 class="text-primary">SHIPMENTS</h3>
+                    <p>
+                        <small>
+                            With a well connected transportation
+                            infrastructure we offer superb courier logistics,
+                            finely tuned using artificial intelligence.
+                        </small>
+                    </p>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <img src="{% static 'shipment/images/courier.png'%}" alt="" class="img-fluid shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                <div class="py-4 px-3">
+                    <small><b>Cargo Insurance</b></small>
+                    <h3 class="text-primary">PROTECTION</h3>
+                    <p>
+                        <small>
+                            We guarantee first class cargo Insurance and secure
+                            delivery for our clients with insurance third party
+                            providers.
+                        </small>
+                    </p>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <img src="{% static 'shipment/images/deliveryman1.jpg'%}" alt="" class="img-fluid shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+                <div class="py-4 px-3">
+                    <small><b>On time</b></small>
+                    <h3 class="text-primary">DELIVERIES</h3>
+                    <p>
+                        <small>
+                            We adhere to strict and precise operations
+                            with the help of artificial intelligence3 to deliver
+                            your cargo smoothly in time.
+                        </small>
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
+</section>
+
+<section id="reviews" class="">
+    <div class="container">
+        <section class="row">
+            <article class="col-12 col-md-4 text-end">
+                <div class="">
+                    <h5>CUSTOMER REVIEW</h5>
+                    <h2>CLIENTS THAT TRUST OUR SERVICES</h2>
+                    <span class="d-flex">
+                        <i
+                            class=" icofont icofont-quote-left icofont-4x text-muted"></i>
+                        <p class="ps-3">
+                            Customer satisfaction and feedback has been key to
+                            our business growth.
+                            with over 97% customer positive feedback, we pace
+                            setters.
+                        </p>
+                    </span>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-4">
+                <div class="review d-flex" data-aos="zoom-in-up">
+                    <i class=" icofont icofont-quote-left icofont-4x text-muted"></i>
+                    <div>
+                        <p class="ps-3">
+                            WORLDWIDE COURIER DELIVERY SERVICE has been a life changing for me, influenced my business in a positive way I can ever imagine.
+                        </p>
+                        <img src="{% static 'shipment/images/sign.png'%}" alt="" class="img-fluid text-end d-inline">
+                        <p class="text-end"><b>Patrice Curlie</b><br />San Francisco
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-4">
+                <div class="review d-flex" data-aos="zoom-in" data-aos-delay="200">
+                    <i class=" icofont icofont-quote-left icofont-4x text-muted"></i>
+                    <div>
+                        <p class="ps-3">
+                            Business have not been this good, I could handle my business while relaxed that my cargo will surely arrived at its destination in time.
+                        </p>
+                        <img src="{% static 'shipment/images/sign1.png'%}" alt="" class="img-fluid text-end d-inline">
+                        <p class="text-end"><b>Jane Benedictine</b><br />UK
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </div>
+</section>
+<!-- review section ends here-->
+
+<section id="services" class="">
+    <div class="container">
+        <section class="row">
+            <article class="col-12 col-md-4 p-4">
+                <div class="text-end">
+                    <h5>WHAT WE DO @</h5>
+                    <h2>
+                        WORLDWIDE COURIER LOGISTICS SERVICES
+                    </h2>
+                </div>
+            </article>
+            <article class="col-12 col-md-4 p-4">
+                <div class="shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="{% static 'shipment/images/worlddelivery.jpg'%}" style="padding: 0 !important;" alt="" class="img-fluid">
+                    <div class=" d-flex py-3 ps-sm-4 py-sm-4">
+                        <i class=" icofont icofont-world icofont-4x text-primary"></i>
+                        <span class="ps-2">
+                            <h6>Worldwide</h6>
+                            <p>
+                                At WORLDWIDE EXPRESS COURIER SERVICE, we ship
+                                around the glode, around the route. wherever
+                                theres a clock we are there.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </article>
+            <article class="col-12 col-md-4 p-4">
+                <div class="shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="{% static 'shipment/images/trucks.jpg'%}" style="padding: 0 !important;" alt="" class="img-fluid">
+                    <div class=" d-flex py-3 ps-sm-4 py-sm-4">
+                        <i class=" icofont icofont-tracking icofont-4x text-primary"></i>
+                        <span class="ps-3">
+                            <h6>Tracking</h6>
+                            <p>
+                                Stay updated with your shipments, cargo live
+                                location through mobile or web through our
+                                monitoring environment.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-4 p-4">
+                <div class="shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="{% static 'shipment/images/planetakeoff.jpg'%}" style="padding: 0 !important;" alt="" class="img-fluid">
+                    <div class=" d-flex py-3 ps-sm-4 py-sm-4">
+                        <i class=" icofont icofont-ubercart icofont-4x text-primary"></i>
+                        <span class="ps-3">
+                            <h6>Secured Storage</h6>
+                            <small>
+                                Our warehouse are regularly
+                                audited. With the help of AI we are able to meet
+                                comteporary
+                                business model.
+                            </small>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-4 p-4">
+                <div class="shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="{% static 'shipment/images/dev24.jpg'%}" style="padding: 0 !important;" alt="" class="img-fluid">
+                    <div class=" d-flex py-3 ps-sm-4 py-sm-4">
+                        <i class=" icofont icofont-headphone icofont-4x text-primary"></i>
+                        <span class="ps-3">
+                            <h6>24/7 Customer care</h6>
+                            <small>
+                                Our customer care support service is available
+                                24/7 to listen to you and there to assist you in
+                                your every need.
+                            </small>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-4 p-4">
+                <div class="shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="{% static 'shipment/images/package4.jpg'%}" style="padding: 0 !important;" alt="" class="img-fluid">
+                    <div class=" d-flex py-3 ps-sm-4 py-sm-4">
+                        <i class=" icofont icofont-fast-delivery icofont-4x text-primary"></i>
+                        <span class="ps-3">
+                            <h6>Speed delivery</h6>
+                            <small>
+                                Adhering to strict delivery protocols gives us
+                                the liverage to deliver your cargo securely in
+                                time.
+                            </small>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <section class="row">
+            <div class="col-12 col-md-5">
+                <div class=" text-end">
+                    <h5>MONITORING CARGO / ITEMS</h5>
+                    <h2>TRACK PACKAGE</h2>
+                    <p>
+                        <i class=" icofont icofont-quote-left icofont-3x text-muted"></i>
+                        <span>Enter your unique tracking number to begin
+                            tracking your shipment in real time.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 offset-md-2">
+                <h3 class="bg-primary" style="padding: 15px;">YOUR TRACKING ID.
+                </h3>
+                <form action="" method="POST">
+                    {% csrf_token %} {{ form.as_p }}
+                    <div class=" text-right">
+                        <input type="submit" class=" btn btn-primary col-12" value="Track Now">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</section>
+
+<section id="statistics">
+    <div class="container">
+        <section class="row">
+            <article class="col-12 col-md-4">
+                <div class="text-end">
+                    <h5>STATISTICAL FACTS</h5>
+                    <h2>WORLDWIDE EXPRESS COURIER SERVICE</h2>
+                    <div class=" d-flex pb-3 pt-5">
+                        <i class=" icofont icofont-quote-left icofont-4x text-light"></i>
+                        <span class="ps-2">
+                            <p>
+                                Our hugh strive for so many years have proven
+                                WORLDWIDE EXPRESS COURIER SERVICE as a trusted
+                                and reliable logistic partners
+                                you can trust.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </article>
+            <article class="col-12 col-md-8">
+                <div class="ps-md-4">
+                    <div>
+                        <label for="">INTERNATIONAL DELIVERIES</label>
+                        <div class="scope">
+                            <progress id="sc-deliveries" value="91" max="100"></progress>
+                            <span>91</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="">FREIGHT FORWARDING</label>
+                        <div class="scope">
+                            <progress id="sc-freight" value="87" max="100"></progress>
+                            <span>87</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="">CUSTOMER SATISFACTION</label>
+                        <div class="scope">
+                            <progress id="sc-customer" value="99" max="100"></progress>
+                            <span>99</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <label for="">DOOR TO DOOR</label>
+                        <div class="scope">
+                            <progress id="sc-door" value="97" max="100"></progress>
+                            <span>97</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="row text-center pt-5 mt-4">
+            <article class="col-12 col-md-4 p-4">
+                <h3 class="h1">788,299</h3>
+                <p class="text-warning">KM IN 1/4 2020</p>
+                <small>
+                    With a total of 7million square miles amassed,
+                    and recording the lowest since operation,
+                    788,299 we are your sure bet!.
+                </small>
+            </article>
+
+            <article class="col-12 col-md-4 p-4 border-start border-end">
+                <h3 class="h1">10,245</h3>
+                <p class="text-warning">TONNES OF GOODS</p>
+                <small>
+                    Amidst the COVID-19 crisis and the ongoing war in ukraine,
+                    WORLDWIDE DELIVERY COURIER SERVICE continues to deliver only
+                    the best services.
+                </small>
+            </article>
+
+            <article class="col-12 col-md-4 p-4">
+                <h3 class="h1">4,000,000</h3>
+                <p class="text-warning">SATISFIED CLIENTS</p>
+                <small>
+                    Giving our clients the best services has always been a
+                    priority.
+                    Worldwide delivery with the help of AI has put smiles on our
+                    customers face.
+                </small>
+            </article>
+        </section>
+    </div>
+</section>
+
+{% endblock content %}

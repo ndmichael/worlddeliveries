@@ -1,0 +1,164 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="navbackground">
+    <div class="container">
+        <section class="row">
+
+            <div class="col-12 col-md-4 offset-md-2">
+                <form action="" method="POST">
+                    {% csrf_token %} {{ form.as_p }}
+                    <div class=" text-right">
+                        <input type="submit" class=" btn btn-lg btn-primary col-12" value="Track Now">
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 col-md-4 px-5 py-2">
+                <h1 class="text-white">Track Items</h1>
+                <p class="text-light">
+                    Using our tracking feature, track your Items by inputing tracking code.
+                </p>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="py-5 bg-light">
+    <div class=" container">
+        {% if item %}
+        <article class="row pt-3 pb-5">
+            <div class="col-12 col-md-3 offset-sm-2">
+                <div style="position: relative; z-index: 100; ">
+                    <span class="border bg-info" style="position: absolute; width: 260px; height: 10px; left: 75px; top: 40px; z-index: 1; display: block;"></span>
+                    <div class="shadow-sm  rounded-circle d-flex justify-content-center align-items-center bg-white" style="position: relative; width: 80px; height: 80px; z-index: 4;">
+                        <i class="secondary_color icofont icofont-tick-mark icofont-3x"></i>
+                    </div>
+                    <p class="pt-3">
+                        Order placed. <br />
+                        <span><b>{{item.date_sent|date:"l, d M, Y"}}</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div style="position: relative; z-index: 100; ">
+                    <span class="border bg-white border" style="position: absolute; width: 260px; height: 10px; left: 75px; top: 40px; z-index: 1; display: block;"></span>
+                    <div class="shadow-sm rounded-circle d-flex justify-content-center align-items-center bg-white" style="position: relative; width: 80px; height: 80px; z-index: 4;">
+                        {% if item.paid %}
+                        <i class=" secondary_color icofont icofont-paper-plane icofont-3x"></i> {% else %}
+                        <i class="icofont icofont-paper-plane icofont-3x text-dark"></i> {% endif %}
+                    </div>
+
+                    <p class="pt-3">
+                        Item Shipped, On route. <br /> {% if item.status == 'transit' %}
+                        <b>{{item.date_shipped|date:"l, d M, Y"}}</b> {% else %} expected <b>{{item.date_shipped|date:"l, d M, Y"}}</b> {% endif %}
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-3">
+                <div style="position: relative; z-index: 100; ">
+                    <div class="shadow-sm rounded-circle d-flex justify-content-center align-items-center bg-white" style="width: 80px; height: 80px; ">
+                        {% if item.status == 'delivered' and item.problem_type == 'no problem' %}
+                        <i class="secondary_color icofont icofont-checked icofont-3x "></i> {% else %}
+                        <i class="icofont icofont-checked icofont-3x "></i> {% endif %}
+                    </div>
+                    <p class="pt-3">
+                        Expected Delivery.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="row">
+            <div class="col-12 col-md-4 offset-2">
+                <div class="p-3 shadow-sm rounded bg-white">
+                    <header class="pt-4">
+                        <h4>
+                            Shipment Details
+                        </h4>
+                    </header>
+                    <table class="table table-borderless mt-4">
+                        <tr>
+                            <td class=" text-secondary">Delivery Method</td>
+                            <td><b>Express Pro</b></td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Courier</td>
+                            <td><b>Targe Logistics</b></td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Shipping to</td>
+                            <td>
+                                <b>{{item.item_reciever.fullname}}</b> <br /> {{item.item_reciever.address}}, {{item.item_reciever.country}} <br /> {{item.item_reciever.postal_code}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Shipping From</td>
+                            <td>
+                                <b>{{item.item_sender}}</b> <br /> {{item.item_sender.country}} <br /> {{item.item_sender.postal_code}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="p-3 shadow-sm rounded bg-white">
+                    <header class="pt-4">
+                        <h4>
+                            Item Details
+                        </h4>
+                    </header>
+                    <table class="table table-borderless mt-4">
+                        <tr>
+                            <td class=" text-secondary">Status</td>
+                            <td><b>{{item.status}}</b></td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Name</td>
+                            <td><b>{{item.item_name}}</b></td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Description</td>
+                            <td>{{item.description}}</td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Quantity</td>
+                            <td><b>{{item.quantity}} pieces</b></td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Weight:</td>
+                            <td>
+                                <b>{{item.weight}}</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Paid</td>
+                            <td>
+                                <b>{{item.paid}}</b> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=" text-secondary">Tracking Code</td>
+                            <td><b>{{ item.item_code|truncatechars:7 }} </b>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 offset-2 col-md-4" style="margin-top:40px">
+                <div>
+                    <img class="shadow-lg img-fluid" src="{{ item.image.url }}" style="min-width:100%; height: 350px; object-fit: contain; object-position:center;" />
+                </div>
+            </div>
+        </article>
+        {% else %}
+        <div class="row">
+            <div class="col-12 offset-md-2 col-md-5 mx">
+                <div>
+                    No item returned, input your tracking code...
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}
