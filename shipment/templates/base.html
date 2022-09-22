@@ -65,7 +65,7 @@
                         <a class="nav-link" aria-current="page" href="{% url 'shipment_index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'shipment_track' %}">Track Shipment</a>
+                        <a class="nav-link" href="#track">Track Shipment</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About Us</a>
@@ -74,10 +74,10 @@
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Get A Quote</a>
+                        <a class="nav-link" href="#quote">Get A Quote</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="#footer">
                             Contact Us
                         </a>
                     </li>
@@ -89,7 +89,7 @@
     {% block content %} {% endblock content %}
 
 
-    <footer class="bg-primary text-white py-5">
+    <footer id="footer" class="bg-primary text-white py-5">
         <div class=" container">
             <div class="row">
                 <div class="col-12 col-md-3 text-end">

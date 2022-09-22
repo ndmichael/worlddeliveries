@@ -28,4 +28,13 @@ window.addEventListener('scroll', () => {
     else {
         hideProgress();
     }
-})
+});
+
+var slider = document.getElementById("slider1");
+var selector = document.getElementById("selectValue");
+// selector.innerHTML = slider.value;
+console.log("slider" + slider.value)
+
+slider.oninput = function () {
+    selector.innerHTML = this.value;
+}

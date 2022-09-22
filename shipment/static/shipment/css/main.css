@@ -49,6 +49,56 @@
         background-image: linear-gradient(rgb(darkblue), #3d59ab);
     }
     
+    #slider1 {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        height: 7px;
+        outline: none;
+        background: #dee2e6;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    #slider1::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+        border-radius: 50%;
+        background-color: #3d59ab;
+    }
+    
+    #slider1::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+        border-radius: 50%;
+        background-color: #3d59ab;
+    }
+    
+    #selectValue {
+        position: absolute;
+        top: -30px;
+        left: 40%;
+        transform: translate(-40%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 7px #dee2e6;
+        text-align: center;
+        height: 30px;
+        width: 130px;
+        z-index: 100;
+        transform: translate(0, 2px);
+    }
+    
     .carousel-item>img {
         height: 100vh;
         object-fit: cover;
@@ -68,12 +118,6 @@
         font-size: 22px;
         font-weight: 400;
         text-shadow: 2px 2px 2px black;
-    }
-    
-    .btn-primary {
-        background: #4169e1;
-        border-radius: 22, 5px;
-        box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.25), inset 2px 2px 5px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
     }
     
     .navbar-light {
@@ -100,7 +144,6 @@
         display: inline-block;
         height: auto;
         background: white;
-        color: #3d59ab;
         box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     }
     
@@ -177,6 +220,10 @@
         background-size: cover;
         background-position: top;
         background-attachment: fixed;
+    }
+    
+    #track {
+        padding: 6em 20px;
     }
     
     h1,
