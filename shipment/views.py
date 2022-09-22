@@ -12,7 +12,22 @@ from django.core.mail import send_mail, BadHeaderError
 
 
 def index (request):
-    return render(request, 'shipment/index.html', {'title': 'home'})
+    item=None
+    if 'q' in request.POST:
+        form = ItemTrackForm(request.POST)
+        if form.is_valid():
+            q = form.cleaned_data['q']
+            item = ItemDetail.objects.filter(item_code=q).first()
+            form = ItemTrackForm() 
+    else:
+        form = ItemTrackForm()       
+    context = {
+        'form': form,
+        'item': item,
+        'title': 'tracking',
+        'title': 'world deliveries'
+    }
+    return render(request, 'shipment/index.html', context)
 
 def track_item (request):
     
