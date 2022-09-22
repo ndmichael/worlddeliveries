@@ -105,6 +105,7 @@
                         <small>
                             send us a mail <br>
                             info@wrldfreights.com.
+
                         </small>
                     </span>
                 </div>
@@ -123,8 +124,8 @@
                     <span class="ps-4 text-light">
                         <h5><b>Our Location</b></h5>
                         <small>
-                            send us a mail <br>
-                            info@wrldfreights.com.
+                            Block ton MA 2301, 600 Oak strees, Birmingham
+                            City London.
                         </small>
                     </span>
                 </div>
@@ -149,9 +150,25 @@
     <script>
         $(window).scroll(function() {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
-            console.log("pfff")
         });
     </script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">
+    </script>
+    <script>
+        const {
+            counterUp
+        } = window.counterUp
+
+        const el = document.querySelector('.counter')
+
+        // Start counting, typically you need to call this when the 
+        // element becomes visible, or whenever you like.
+        counterUp(el, {
+            duration: 5000,
+            delay: 16,
+        })
+    </script>
+
 </body>
 
 </html>

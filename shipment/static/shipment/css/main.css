@@ -142,16 +142,16 @@
     .scrolled {
         display: inline-block;
         height: auto;
-        background: white;
+        background: #3d59ab;
         box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     }
     
     .scrolled .navbar-nav .nav-link {
-        color: black;
+        color: white;
     }
     
     .scrolled .navbar-nav .nav-link:hover {
-        color: #3d59ab;
+        color: gold;
         text-shadow: 0;
     }
     
