@@ -106,7 +106,6 @@
     
     .carousel-item .carousel-caption {
         top: 22vh;
-        padding: 20px;
     }
     
     .carousel-item .carousel-caption h1 {
@@ -264,5 +263,14 @@
         }
         #header h1 {
             font-size: 2.2em;
+        }
+        .carousel-item .carousel-caption h1 {
+            font-size: 2em;
+            text-shadow: 2px 2px 2px black;
+        }
+        .carousel-item .carousel-caption p {
+            font-size: 18px;
+            font-weight: 400;
+            text-shadow: 2px 2px 2px black;
         }
     }
