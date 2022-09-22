@@ -106,7 +106,6 @@
     
     .carousel-item .carousel-caption {
         top: 22vh;
-        padding: 20px;
     }
     
     .carousel-item .carousel-caption h1 {
@@ -180,6 +179,11 @@
         width: 100%;
         object-fit: cover;
         object-position: top;
+    }
+    
+    #about .forklift {
+        transform: translateY(-200px) scale(0.7);
+        z-index: 100;
     }
     
     #services {
@@ -264,5 +268,18 @@
         }
         #header h1 {
             font-size: 2.2em;
+        }
+        .carousel-item .carousel-caption h1 {
+            font-size: 2em;
+            text-shadow: 2px 2px 2px black;
+        }
+        .carousel-item .carousel-caption p {
+            font-size: 18px;
+            font-weight: 400;
+            text-shadow: 2px 2px 2px black;
+        }
+        #about .forklift {
+            transform: translateY(0) scale(0.7);
+            z-index: 100;
         }
     }
