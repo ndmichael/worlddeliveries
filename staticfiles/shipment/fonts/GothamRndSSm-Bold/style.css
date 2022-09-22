@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: local('Gotham Rounded SSm Bold'), local('Gotham-Rounded-SSm-Bold'),
+        url('GothamRndSSm-Bold.woff2') format('woff2'),
+        url('GothamRndSSm-Bold.woff') format('woff'),
+        url('GothamRndSSm-Bold.ttf') format('truetype');
+    /* font-weight: 700; */
+    font-style: normal;
+  }

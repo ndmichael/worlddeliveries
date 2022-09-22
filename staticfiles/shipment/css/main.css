@@ -1,0 +1,268 @@
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+    .secondary_color {
+        color: #3d59ab !important;
+        /* color: #0047AB; */
+    }
+    
+    html,
+    body {
+        width: auto !important;
+    }
+    
+    .scope {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(rgba(80, 80, 80, 1), rgba(22, 22, 22, 1));
+        padding: 7px;
+    }
+    
+    .progress {
+        border-radius: 15px !important;
+        width: 90%;
+        height: 15px;
+        background: grey;
+        border: 0;
+    }
+    
+    .progress #sc-deliveries {
+        width: 91%;
+        height: 100%;
+        background-image: linear-gradient(rgb(darkblue), #3d59ab);
+    }
+    
+    .progress #sc-freight {
+        width: 87%;
+        height: 100%;
+        background-image: linear-gradient(rgb(darkblue), #3d59ab);
+    }
+    
+    .progress #sc-customer {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgb(darkblue), #3d59ab);
+    }
+    
+    .progress #sc-door {
+        width: 97%;
+        height: 100%;
+        background-image: linear-gradient(rgb(darkblue), #3d59ab);
+    }
+    
+    #slider1 {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        height: 7px;
+        outline: none;
+        background: #dee2e6;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    #slider1::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+        border-radius: 50%;
+        background-color: #3d59ab;
+    }
+    
+    #slider1::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 38px;
+        height: 38px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+        border-radius: 50%;
+        background-color: #3d59ab;
+    }
+    
+    #selectValue {
+        position: absolute;
+        top: -30px;
+        left: 40%;
+        transform: translate(-40%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 7px #dee2e6;
+        text-align: center;
+        height: 30px;
+        width: 130px;
+        z-index: 100;
+        transform: translate(0, 2px);
+    }
+    
+    .carousel-item>img {
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    .carousel-item .carousel-caption {
+        top: 22vh;
+        padding: 20px;
+    }
+    
+    .carousel-item .carousel-caption h1 {
+        font-size: 3.2em;
+        text-shadow: 2px 2px 2px black;
+    }
+    
+    .carousel-item .carousel-caption p {
+        font-size: 22px;
+        font-weight: 400;
+        text-shadow: 2px 2px 2px black;
+    }
+    
+    .navbar-light {
+        padding: 10px !important;
+    }
+    
+    .navbar-light .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 1);
+        /* color: #000000; */
+        text-transform: capitalize;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Avalon';
+        font-size: 15px;
+        /* padding: 10px; */
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #3d59ab;
+        /* color: gold; */
+    }
+    
+    .scrolled {
+        display: inline-block;
+        height: auto;
+        background: white;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .scrolled .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    .scrolled .navbar-nav .nav-link:hover {
+        color: #3d59ab;
+        text-shadow: 0;
+    }
+    
+    .scrolled .navbar-brand {
+        color: #000000;
+        font-family: 'Bourgeois Rounded';
+    }
+    
+    #header {
+        min-height: 85vh;
+        width: 100%;
+        /* background-image: linear-gradient(to bottom, rgba(54, 55, 149, 0.9), rgba(54, 55, 151, 0.4)), url("/static/shipment/images/bg1.jpg"); */
+        background-image: linear-gradient(135deg, rgba(0, 97, 242, .7) 0%, rgba(105, 0, 199, .8) 100%), url("/static/shipment/images/bg23.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #FFFFFF;
+    }
+    
+    #about {
+        padding: 6em 0;
+    }
+    
+    #about img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    #services {
+        padding: 6em 0;
+    }
+    
+    #services img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    #reviews {
+        padding: 6em 0;
+        background: linear-gradient(rgba(08, 08, 08, 0.9), rgba(08, 08, 08, 0.85)), url('/static/shipment/images/dottedmap.png');
+        color: #FFFFFF;
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+    }
+    
+    #reviews .review {
+        padding: 40px;
+        border-radius: 20px 0;
+        border: 1px solid rgba(255, 255, 255, 0.01);
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+        -moz-backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    
+    #statistics {
+        padding: 6em 20px;
+        background: linear-gradient(rgba(08, 08, 08, 0.7), rgba(08, 08, 08, 0.85)), url('/static/shipment/images/dottedmap.png');
+        color: #FFFFFF;
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+    }
+    
+    #track {
+        padding: 6em 20px;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h4,
+    h6 {
+        /* font-family: 'Black Han Sans', sans-serif; */
+        font-family: 'Gotham Rounded';
+        font-weight: 100;
+        text-transform: capitalize;
+        letter-spacing: 0 !important;
+    }
+    
+    p {
+        font-family: 'Avalon';
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+    
+    #header h1 {
+        font-size: 48px;
+    }
+    
+    @media(max-width: 48em) {
+        html,
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .collapse,
+        .navbar-collapse {
+            width: 100% !important;
+            margin: 0 !important;
+            background: #4169e1;
+            padding: 20px !important;
+        }
+        #header h1 {
+            font-size: 2.2em;
+        }
+    }

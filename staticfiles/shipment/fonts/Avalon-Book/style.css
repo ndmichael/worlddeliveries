@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Avalon';
+    src: local('Avalon Book'), local('Avalon-Book'),
+        url('Avalon-Book.woff2') format('woff2'),
+        url('Avalon-Book.woff') format('woff'),
+        url('Avalon-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
