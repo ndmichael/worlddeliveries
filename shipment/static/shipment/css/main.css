@@ -181,6 +181,11 @@
         object-position: top;
     }
     
+    #about .forklift {
+        transform: translateY(-200px) scale(0.7);
+        z-index: 100;
+    }
+    
     #services {
         padding: 6em 0;
     }
@@ -272,5 +277,9 @@
             font-size: 18px;
             font-weight: 400;
             text-shadow: 2px 2px 2px black;
+        }
+        #about .forklift {
+            transform: translateY(0px) scale(0.7);
+            z-index: 100;
         }
     }
