@@ -279,7 +279,7 @@
             text-shadow: 2px 2px 2px black;
         }
         #about .forklift {
-            transform: translateY(0px) scale(0.7);
+            transform: translateY(0) scale(0.7);
             z-index: 100;
         }
     }
