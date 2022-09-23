@@ -106,6 +106,8 @@
     
     .carousel-item .carousel-caption {
         top: 22vh;
+        left: 0;
+        /* width: 100%; */
     }
     
     .carousel-item .carousel-caption h1 {
