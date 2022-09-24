@@ -166,7 +166,7 @@ AWS_DEFAULT_UCL = None
 # if not DEBUG:
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://wrldfreights.com', 'http://wrldfreights.com', 'www.wrldfreights.com']
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
