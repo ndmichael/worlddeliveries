@@ -152,6 +152,22 @@ LOGIN_REDIRECT_URL = "/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# setting environmental variables for S3
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID_BOI")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY_BOI")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME_BOI")
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_S3_REGION_NAME = "us-east-2"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+
+AWS_DEFAULT_UCL = None
+
+# if not DEBUG:
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+CSRF_TRUSTED_ORIGINS = ['*']
+
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
     SECURE_SSL_REDIRECT = True
