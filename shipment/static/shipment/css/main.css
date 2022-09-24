@@ -106,8 +106,6 @@
     
     .carousel-item .carousel-caption {
         top: 22vh;
-        left: 0;
-        /* width: 100%; */
     }
     
     .carousel-item .carousel-caption h1 {
@@ -253,6 +251,17 @@
     
     #header h1 {
         font-size: 48px;
+    }
+    
+    .navbackground {
+        padding-top: 22vh;
+        min-height: 75vh;
+        background: linear-gradient(135deg, rgba(0, 97, 242, .6) 0%, rgba(105, 0, 199, .5) 100%);
+    }
+    
+    .ad-upward {
+        transform: translateY(-120px);
+        z-index: 1000;
     }
     
     @media(max-width: 48em) {

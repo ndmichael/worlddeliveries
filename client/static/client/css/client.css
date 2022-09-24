@@ -1,0 +1,12 @@
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-control {
+    margin-top: .7rem;
+}
+
+form>a {
+    text-decoration: none;
+    color: black;
+}

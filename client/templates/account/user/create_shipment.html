@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+<section class="navbackground">
+    <div class="container">
+        <section class="row">
+            <div class="col-12 col-md-6 mx-auto text-center">
+                <h1 class="text-light">Welcome <span class="text-white">{{request.user.username}}</span>
+                </h1>
+                <p class="text-light">
+                    Admin are the only ones allowed to create pacakge logistics.
+                    <br /> Each User created will automatically act as sender.
+                </p>
+            </div>
+        </section>
+    </div>
+</section>
+<section id="dashboard">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container py-5">
+            <div class="row ">
+                <div class="col-12 col-md-6 px-4 py-2">
+                    <div class="row p-4 shadow bg-light">
+                        <legend class=" border-bottom border-primary pb-3 rounded-3">
+                            <h3>SENDER DETAILS</h3>
+                        </legend>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ s_form.fullname|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ s_form.address|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ s_form.company|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ s_form.postal_code|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ s_form.country|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ s_form.city|as_crispy_field }}
+                        </div>
+                    </div>
+                </div>
+                <!--receiver form starts here -->
+                <div class="col-12 col-md-6 px-4 py-2">
+                    <div class="row p-4 shadow bg-light">
+                        <legend class=" border-bottom border-primary pb-3 rounded-3">
+                            <h3>RECEIVER DETAILS</h3>
+                        </legend>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ r_form.fullname|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ r_form.email|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-4 mb-0">
+                            {{ r_form.postal_code|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-4 mb-0">
+                            {{ r_form.country|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-4 mb-0">
+                            {{ r_form.city|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ r_form.address|as_crispy_field }}
+                        </div>
+                    </div>
+                </div>
+
+                <!--item form starts here -->
+                <div class="col-12 col-md-6 px-4 py-2 mx-auto">
+                    <div class="row p-4">
+                        <legend class=" border-bottom border-primary pb-3 rounded-3">
+                            <h3>ITEM(s) DETAILS</h3>
+                        </legend>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ i_form.item_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ i_form.quantity|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-6 mb-0">
+                            {{ i_form.weight|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ i_form.description|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-12 col-md-12 mb-0">
+                            {{ i_form.image|as_crispy_field }}
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-lg col-12">
+                                Create Shipment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock content %}

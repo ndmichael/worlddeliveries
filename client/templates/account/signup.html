@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% load i18n %} {% block head_title %}{% trans "Signup" %}{% endblock %} {% block content %}
+
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="offset-md-3 col-12 col-md-6">
+            <div class="form-override">
+                <h1 class="text-center secondary_color">{% trans "Sign Up" %}
+                </h1>
+                <br />
+                <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.username|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-12 mb-0">
+                            {{ form.password1|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-12 mb-0">
+                            {{ form.password2|as_crispy_field }}
+                        </div>
+                    </div>
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+                    <div class=" d-grid gap-2 py-3">
+                        <button class="btn btn-warning btn-lg shadow " type="submit">{% trans "CREATE ACCOUNT" %}</button>
+                    </div>
+                </form>
+
+                <div class="border-top pt-2 mt-3 text-center">
+                    {% blocktrans %}<small>Already have an account?</small>
+                    <br />
+                    <a href="{{ login_url }}"><strong>LOG IN</strong></a> {% endblocktrans %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

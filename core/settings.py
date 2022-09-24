@@ -36,12 +36,21 @@ ALLOWED_HOSTS = ["www.wrldfreights.com","wrldfreights.com", "localhost", "127.0.
 
 INSTALLED_APPS = [
     'shipment',
+    'client',
+    "crispy_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # allauth
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
+    "django.contrib.sites",
 ]
 
 MIDDLEWARE = [
@@ -80,8 +89,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'Xum5ZWfGvAotBahBbiRF',
+        'HOST': 'containers-us-west-66.railway.app',
+        'PORT': '8062',
     }
 }
 
@@ -125,6 +140,11 @@ STATIC_URL = 'static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# ALLAUTH CONFIG
+LOGIN_REDIRECT_URL = "/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="navbackground">
+    <div class="container">
+        <section class="row">
+            <div class="col-12 col-md-6 mx-auto text-center">
+                <h1 class="text-light">Welcome <span class="text-white">{{request.user.username}}</span>
+                </h1>
+                <p class="text-light">
+                    Admin are the only ones allowed to create pacakge logistics.
+                </p>
+                <p class="pt-4">
+                    <a href="{% url 'create-shipment' %}" class=" btn btn-primary rounded-pill btn-lg col-6">
+                        CREATE LOGISTIC</a>
+                </p>
+            </div>
+        </section>
+    </div>
+</section>
+<section id="dashboard" class="ad-upward">
+    <div class="container py-5 bg-white">
+        <div class="row ">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="bg-primary text-light">
+                            <th>Package Name</th>
+                            <th>Client Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Paid</th>
+                            <th>Tracking Code</th>
+                            <th class="text-end">Action</th>
+                        </thead>
+                        <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td>{{item.item_name}}</td>
+                                <td>{{item.item_receiver.fullname}}</td>
+                                <td>{{item.date_sent}}</td>
+                                <td>{{item.status}}</td>
+                                <td>{{item.paid}}</td>
+                                <td><b>{{item.item_code}}</b></td>
+                                <td class=" text-end">
+                                    <div class="dropdown d-inline-block">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-placement="top" title="Edit Logistics">
+                                            <i
+                                                class=" icofont icofont-options"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="{% url 'edit_sender' item.slug item.id %}">Edit
+                                                    Sender Details</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'edit_client' item.slug item.id %}">
+                                                    Edit Client Details
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="{% url 'edit_item' item.slug item.id %}">
+                                                    Edit Item Details
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-2 d-inline-block" data-bs-toggle="tooltip" aria-expanded="false" data-bs-placement="top" title="Logistics Issues">
+                                        <a class="btn btn-warning" href="{% url 'edit_status' item.id %}">
+                                            <i class=" icofont icofont-settings"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

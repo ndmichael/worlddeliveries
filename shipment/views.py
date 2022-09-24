@@ -86,7 +86,7 @@ def editSender(request, slug, id):
     else:
         form = EditSenderForm(instance=sender)
     context = {
-        'title': "targe-editor",
+        'title': "world-editor",
         's_form': form
     }
     return render(request, 'shipment/editsender.html', context)
@@ -103,7 +103,7 @@ def editClient(request, slug, id):
     else:
         form = EditClientForm(instance=receiver)
     context = {
-        'title': "targe-editor sender",
+        'title': "world-editor sender",
         'form': form
     }
     return render(request, 'shipment/editclient.html', context)  
@@ -121,7 +121,7 @@ def editItem(request, slug, id):
     else:
         form = EditItemForm(instance=item)
     context = {
-        'title': "targe-editor sender",
+        'title': "world-editor sender",
         'form': form
     }
     return render(request, 'shipment/edititem.html', context)      
