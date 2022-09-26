@@ -68,7 +68,7 @@ class ItemDetail (models.Model):
     quantity = models.IntegerField()
     description = models.TextField(max_length= 400, null=True, blank=True)
     weight = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='package_photos', default='default.jpg')
+    image = models.ImageField(upload_to='package_photos', default='avatar.png')
     paid = models.BooleanField(default=False)
     shipped = models.BooleanField(default=False)
     item_code = models.CharField(max_length=100)
