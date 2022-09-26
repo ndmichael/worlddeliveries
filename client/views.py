@@ -10,7 +10,7 @@ def dashboard(request, username):
     items = ItemDetail.objects.all()
     context = {
         "items": items,
-        "title": "dashboard-targe"
+        "title": "dashboard-worldwide"
     }
     return render(request, 'account/user/dashboard.html', context)
 
