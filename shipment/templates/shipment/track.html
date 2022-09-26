@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<section id="navbackground">
+<section class="navbackground">
     <div class="container">
         <section class="row">
 
@@ -82,18 +82,18 @@
                         </tr>
                         <tr>
                             <td class=" text-secondary">Courier</td>
-                            <td><b>Targe Logistics</b></td>
+                            <td><b>World Couriers Service.</b></td>
                         </tr>
                         <tr>
                             <td class=" text-secondary">Shipping to</td>
                             <td>
-                                <b>{{item.item_reciever.fullname}}</b> <br /> {{item.item_reciever.address}}, {{item.item_reciever.country}} <br /> {{item.item_reciever.postal_code}}
+                                <b>{{item.item_receiver.fullname}}</b> <br /> {{item.item_reciever.address}}, {{item.item_reciever.country}} <br /> {{item.item_reciever.postal_code}}
                             </td>
                         </tr>
                         <tr>
                             <td class=" text-secondary">Shipping From</td>
                             <td>
-                                <b>{{item.item_sender}}</b> <br /> {{item.item_sender.country}} <br /> {{item.item_sender.postal_code}}
+                                <b>{{item.item_sender}}</b> <br /> {{item.item_sender.country.name}} <br /> {{item.item_sender.postal_code}}
                             </td>
                         </tr>
                     </table>

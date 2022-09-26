@@ -18,12 +18,13 @@ def index (request):
         if form.is_valid():
             q = form.cleaned_data['q']
             item = ItemDetail.objects.filter(item_code=q).first()
+            return render(request, 'shipment/track.html', {'item': item})
             form = ItemTrackForm() 
     else:
         form = ItemTrackForm()       
     context = {
         'form': form,
-        'item': item,
+        # 'item': item,
         'title': 'tracking',
         'title': 'world deliveries'
     }
