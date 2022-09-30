@@ -102,7 +102,7 @@ class Status(models.Model):
     )
 
     PROBLEM = (
-        ('no problem', 'No Problems'),
+        ('none', 'No Problems'),
         ('paperwork', 'PAPERWORK_OVERLOAD'),
         ('custom clerance', 'CUSTOM CLEARANCE'),
         ('bad weather', 'BAD WEATHER'),

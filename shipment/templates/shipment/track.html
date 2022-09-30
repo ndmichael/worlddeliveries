@@ -148,9 +148,36 @@
                     </table>
                 </div>
             </div>
-            <div class="col-12 offset-2 col-md-4" style="margin-top:40px">
+            <div class="col-12 offset-md-2 col-md-4" style="margin-top:40px">
                 <div>
                     <img class="shadow-lg img-fluid" src="{{ item.image.url }}" style="min-width:100%; height: 350px; object-fit: contain; object-position:center;" />
+                </div>
+            </div>
+            <div class="col-12 col-md-4" style="margin-top:40px">
+                <div>
+                    <table class="table table-striped mt-4">
+                        <thead class=" bg-primary text-light">
+                            <tr>
+                                <th>status</th>
+                                <th>problem type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {% if item.item_status.status == 'transit' or item.item_status.status == 'delivered'%}
+                                    <h4 class="text-success">
+                                        {{item.item_status.status}}</h4> {% else %}
+                                    <h4 class="text-danger">
+                                        {{item.item_status.status}}</h4> {% endif %}
+
+                                </td>
+                                <td>
+                                    <h4>{{item.item_status.problem_type}}</h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </article>
