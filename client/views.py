@@ -54,3 +54,11 @@ def create_shipment(request):
     return render(request, 'account/user/create_shipment.html', context)
 
 
+@login_required
+def receipt(request, id):
+    item = ItemDetail.objects.get(id=id)
+    context = {
+        "item": item,
+        "title": "dashboard-worldwide"
+    }
+    return render(request, 'account/user/receipt.html', context)

@@ -34,10 +34,12 @@
                         <tbody>
                             {% for item in items %}
                             <tr>
-                                <td>{{item.item_name}}</td>
+                                <td>
+                                    <a href="{% url 'shipment-receipt' item.id %}">{{item.item_name}}</a>
+                                </td>
                                 <td>{{item.item_receiver.fullname}}</td>
                                 <td>{{item.date_sent}}</td>
-                                <td>{{item.status}}</td>
+                                <td>{{item.item_status.status}}</td>
                                 <td>{{item.paid}}</td>
                                 <td><b>{{item.item_code}}</b></td>
                                 <td class=" text-end">

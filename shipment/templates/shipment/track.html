@@ -110,7 +110,11 @@
                     <table class="table table-borderless mt-4">
                         <tr>
                             <td class=" text-secondary">Status</td>
-                            <td><b>{{item.status}}</b></td>
+                            <td>
+                                {% if item.item_status.status == 'transit' or item.item_status.status == 'delivered'%}
+                                <b class="text-success">{{item.item_status.status}}</b> {% else %}
+                                <b class="text-danger">{{item.item_status.status}}</b> {% endif %}
+                            </td>
                         </tr>
                         <tr>
                             <td class=" text-secondary">Name</td>

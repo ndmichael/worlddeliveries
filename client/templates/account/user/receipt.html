@@ -1,0 +1,122 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="{% static 'shipment/css/bootstrap.min.css' %}" />
+</head>
+
+<body>
+    <section id="receipt">
+        <div class="container">
+            <article class="row ">
+                <div class="col-4">
+                    <h2>
+                        WORLD EXPRESS COURIER SERVICES.
+                    </h2>
+                </div>
+                <div class="col-4">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <p>Invoice: <small><b>....</b></small></p>
+                        <img src="{% static 'shipment/images/barcode.jpg' %}" alt="" class="img-fluid h-50" style="height: 50px !important; width: 100%;">
+                    </div>
+                </div>
+            </article>
+            <article class="row pt-5">
+                <div class="col-12 col-md-6">
+                    <caption>
+                        <h2 class="h4">FROM SENDER</h2>
+                    </caption>
+                    <table class=" table p-2 table-borderless">
+                        <tr>
+                            <td>
+                                <h6>Sender Name:</h6>
+                            </td>
+                            <td class="text-muted">
+                                {{item.item_sender.fullname}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Sender Address</h6>
+                            </td>
+                            <td>
+                                <span class="text-muted">{{item.item_sender.address}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Email:</h6>
+                            </td>
+                            <td>
+                                <span class="text-muted">
+                                    {{item.item_sender.email}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Country:</h6>
+                            </td>
+                            <td>
+                                <span class="text-muted">
+                                    {{item.item_sender.country.name}}
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-md-6">
+                    <table class="table">
+                        <h2>SHIPMENT DETAILS</h2>
+                        <tr>
+                            <td>
+                                <h6>Package Name</h6>
+                            </td>
+                            <td>
+                                <span class="text-muted">
+                                    {{item.item_name}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b class="pe-3">QTY:</b>
+                            </td>
+                            <td>
+                                {{item.quantity}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Description:</h6>
+                            </td>
+                            <td class="text-muted">
+                                {% if item.description %} {{item.description}} {% else %} Valuable Item (Highly Confidential) {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Description:</h6>
+                            </td>
+                            <td class="text-muted">
+                                {{item.description}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>
