@@ -299,3 +299,21 @@
             z-index: 100;
         }
     }
+    /* receipt css */
+    
+    #receipt tr {
+        margin: 5px auto;
+    }
+    
+    #receipt {
+        max-height: 100vh;
+        background: linear-gradient(rgba(08, 08, 08, 0.9), rgba(08, 08, 08, 0.85)), url('/static/shipment/images/logo1.png');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    @media print {
+        .hide-print {
+            display: none;
+        }
+    }
