@@ -13,27 +13,22 @@
     <section id="receipt">
         <div class="container">
             <article class="row ">
-                <div class="col-4">
-                    <h2>
+                <div class="col-8">
+                    <h3>
                         WORLD EXPRESS COURIER SERVICES.
-                    </h2>
-                </div>
-                <div class="col-4">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    </h3>
                 </div>
                 <div class="col-4">
                     <div>
                         <p>Invoice: <small><b>....</b></small></p>
-                        <img src="{% static 'shipment/images/barcode.jpg' %}" alt="" class="img-fluid h-50" style="height: 50px !important; width: 100%;">
+                        <img src="{% static 'shipment/images/barcode.jpg' %}" alt="" class="img-fluid h-50" style="height: 40px !important; width: 70%;">
                     </div>
                 </div>
             </article>
             <article class="row pt-5">
                 <div class="col-12 col-md-6">
                     <caption>
-                        <h2 class="h4">FROM SENDER</h2>
+                        <h2 class="h5">FROM SENDER</h2>
                     </caption>
                     <table class=" table p-2 table-borderless">
                         <tr>
@@ -75,8 +70,8 @@
                     </table>
                 </div>
                 <div class="col-12 col-md-6">
-                    <table class="table">
-                        <h2>SHIPMENT DETAILS</h2>
+                    <table class="table table-borderless">
+                        <h2 class="h5">SHIPMENT DETAILS</h2>
                         <tr>
                             <td>
                                 <h6>Package Name</h6>
@@ -97,10 +92,10 @@
                         </tr>
                         <tr>
                             <td>
-                                <h6>Description:</h6>
+                                <h6>Charges:</h6>
                             </td>
                             <td class="text-muted">
-                                {% if item.description %} {{item.description}} {% else %} Valuable Item (Highly Confidential) {% endif %}
+                                {% if item.paid %} Paid {% else %} Pending {% endif %}
                             </td>
                         </tr>
                         <tr>
@@ -114,6 +109,83 @@
                     </table>
                 </div>
             </article>
+            <article class="row">
+                <div class="col-12 col-md-6">
+                    <table class="table table-borderless">
+                        <h2 class="h5">TO RECEIVER</h2>
+                        <tr>
+                            <td>
+                                <h6>Receivers Name</h6>
+                            </td>
+                            <td>
+                                <span class="text-muted">
+                                    {{item.item_receiver.fullname}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b class="pe-3">Address:</b>
+                            </td>
+                            <td>
+                                {{item.item_receiver.address}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Country:</h6>
+                            </td>
+                            <td class="text-muted">
+                                {{item.item_receiver.country.name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6>Details:</h6>
+                            </td>
+                            <td class="text-muted">
+                                {{item.item_receiver.email}} {{item.item_receiver.phoneNo}}
+                                <br> <b>postal Code:</b> {{item.item_receiver.postal_code}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-md-6">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Ready For</th>
+                                <th>Departure Date</th>
+                                <th>Expected Arrival Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Shipment</td>
+                                <td>{{item.date_sent|date:"l, d M, Y"}}</td>
+                                <td>{{item.delivery_frame|date:"l, d M, Y"}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="{% static '/shipment/images/logo1.png' %}" class="img-fluid" alt="" style="height: 80px !important; width: 70%;">
+                                    <br>
+                                    <span class="border-top text-center"><b>Sign....</b></span>
+                                    <small>We agreed to the terms of World
+                                        Express Delivery Service.</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <artile class="row">
+                <div class="col-12 col-md-6 mx-auto">
+                    <button class="btn btn-primary" onclick="window.print()">
+                        PRINT RECEIPT
+                    </button>
+                </div>
+            </artile>
         </div>
     </section>
 
