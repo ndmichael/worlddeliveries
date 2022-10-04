@@ -95,7 +95,8 @@ class ItemDetail (models.Model):
 
 class Status(models.Model):
     STATUS= (
-        ('transit', 'ON TRANSIT'),
+        ('en route', 'EN ROUTE'),
+        ('in transit', 'IN TRANSIT'),
         ('withheld', 'WITHHELD'), 
         ('sent', 'SENT'),
         ('delivered', 'DELIVERED'),       
