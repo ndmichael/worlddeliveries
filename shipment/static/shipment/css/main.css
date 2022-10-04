@@ -261,7 +261,11 @@
     
     .ad-upward {
         transform: translateY(-120px);
-        z-index: 1000;
+        z-index: 10;
+    }
+    
+    #myModal {
+        z-index: 9999;
     }
     
     @media(max-width: 48em) {
