@@ -261,7 +261,11 @@
     
     .ad-upward {
         transform: translateY(-120px);
-        z-index: 1000;
+        z-index: 10;
+    }
+    
+    #myModal {
+        z-index: 9999;
     }
     
     @media(max-width: 48em) {
@@ -297,5 +301,23 @@
         #about .forklift {
             transform: translateY(0) scale(0.7);
             z-index: 100;
+        }
+    }
+    /* receipt css */
+    
+    #receipt tr {
+        margin: 5px auto;
+    }
+    
+    #receipt {
+        max-height: 100vh;
+        background: linear-gradient(rgba(08, 08, 08, 0.9), rgba(08, 08, 08, 0.85)), url('/static/shipment/images/logo1.png');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    @media print {
+        .hide-print {
+            display: none;
         }
     }
