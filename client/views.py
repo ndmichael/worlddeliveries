@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SenderForm, ItemForm, ReceiverForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from shipment.models import ItemDetail, Status
+from shipment.models import ItemDetail
 
 # Create your views here.
 
@@ -13,6 +14,31 @@ def dashboard(request, username):
         "title": "dashboard-worldwide"
     }
     return render(request, 'account/user/dashboard.html', context)
+
+
+def del_package(request, id):
+    if not request.user.is_staff:
+        messages.error(
+                request, f"You do not have permission to access this page."
+            )
+        return redirect("/")
+
+    item = get_object_or_404(ItemDetail, id=id)
+    item_name = item.item_name
+    if request.method == 'POST':
+        item_d = item.delete()
+        messages.success(
+                request, f"{item_name} has been deleted."
+            )
+        return redirect(
+                "client-dashboard", request.user.username
+            )
+
+    context = {
+        "title": "delete-package",
+        "id": item.id
+    }
+    return render(request, 'account/user/delete_package.html', context)
 
 
 @login_required
