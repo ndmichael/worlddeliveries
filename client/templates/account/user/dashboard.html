@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
 <section class="navbackground">
     <div class="container">
         <section class="row">
@@ -33,6 +33,7 @@
                         </thead>
                         <tbody>
                             {% for item in items %}
+
                             <tr>
                                 <td>
                                     <a href="{% url 'shipment-receipt' item.id %}">{{item.item_name}}</a>
@@ -44,7 +45,7 @@
                                 <td><b>{{item.item_code}}</b></td>
                                 <td class=" text-end">
                                     <div class="dropdown d-inline-block">
-                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-placement="top" title="Edit Logistics">
+                                        <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-placement="top" title="Edit Logistics">
                                             <i
                                                 class=" icofont icofont-options"></i>
                                         </button>
@@ -65,8 +66,13 @@
                                         </ul>
                                     </div>
                                     <div class="p-2 d-inline-block" data-bs-toggle="tooltip" aria-expanded="false" data-bs-placement="top" title="Logistics Issues">
-                                        <a class="btn btn-warning" href="{% url 'edit_status' item.id %}">
+                                        <a class="btn btn-warning btn-sm" href="{% url 'edit_status' item.id %}">
                                             <i class=" icofont icofont-settings"></i>
+                                        </a>
+                                    </div>
+                                    <div class="p-2 d-inline-block" data-bs-toggle="tooltip" aria-expanded="false">
+                                        <a class="btn btn-danger btn-sm" href="{% url 'package-delete' item.id %}">
+                                            <i class=" icofont icofont-delete-alt"></i>
                                         </a>
                                     </div>
                                 </td>
